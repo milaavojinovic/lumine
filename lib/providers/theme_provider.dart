@@ -4,12 +4,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ThemeProvider with ChangeNotifier {
   static const THEME_STATUS = "THEME_STATUS";
   bool _darkTheme = false;
-  bool get getDarkTheme => _darkTheme;
+  bool get getisDarkTheme => _darkTheme; 
 
   ThemeProvider() {
     getTheme();
   }
-  setDarkTheme({required bool themeValue}) async {
+  Future<void> setDarkTheme({required bool themeValue}) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     pref.setBool(THEME_STATUS, themeValue);
     _darkTheme = themeValue;
