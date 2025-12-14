@@ -16,12 +16,16 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset(AssetsMenager.logo),
+          padding: const EdgeInsets.only(left: 16, top: 8, bottom: 8),
+          child: Image.asset(
+            AssetsMenager.logo,
+            width: 36,
+            height: 36,
+            fit: BoxFit.contain,
+          ),
         ),
-        title: const Text(
-          "Profile Screen",
-        ),
+
+        title: const Text("Profile Screen"),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,14 +35,17 @@ class ProfileScreen extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(18.0),
               child: TitelesTextWidget(
-                  label: "Please login to have unlimited access"),
+                label: "Please login to have unlimited access",
+              ),
             ),
           ),
           Visibility(
             visible: true,
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10.0,
+                vertical: 5,
+              ),
               child: Row(
                 children: [
                   Container(
@@ -48,45 +55,39 @@ class ProfileScreen extends StatelessWidget {
                       shape: BoxShape.circle,
                       color: Theme.of(context).cardColor,
                       border: Border.all(
-                          color: Theme.of(context).colorScheme.surface,
-                          width: 3),
+                        color: Theme.of(context).colorScheme.surface,
+                        width: 3,
+                      ),
                       image: const DecorationImage(
                         image: NetworkImage(
-                            "https://cdn.pixabay.com/photo/2017/11/10/05/48/user-2935527_1280.png"),
+                          "https://cdn.pixabay.com/photo/2017/11/10/05/48/user-2935527_1280.png",
+                        ),
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
+                  const SizedBox(width: 10),
                   const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TitelesTextWidget(label: "Masa Saranovic"),
-                      SubtitleTextWidget(label: "masa.saranovic@uns.ac.rs")
+                      SubtitleTextWidget(label: "masa.saranovic@uns.ac.rs"),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
           ),
-          const SizedBox(
-            height: 15,
-          ),
+          const SizedBox(height: 15),
           Padding(
             padding: const EdgeInsets.all(14.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Divider(),
-                const SizedBox(
-                  height: 10,
-                ),
+                const SizedBox(height: 10),
                 const TitelesTextWidget(label: "General"),
-                const SizedBox(
-                  height: 10,
-                ),
+                const SizedBox(height: 10),
                 CustomListTile(
                   imagePath: "${AssetsMenager.imagePath}/bag/checkout.png",
                   text: "All Orders",
@@ -107,31 +108,24 @@ class ProfileScreen extends StatelessWidget {
                   text: "Address",
                   function: () {},
                 ),
-                const SizedBox(
-                  height: 6,
-                ),
+                const SizedBox(height: 6),
                 const Divider(),
-                const SizedBox(
-                  height: 10,
-                ),
-                const TitelesTextWidget(
-                  label: "Settings",
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
+                const SizedBox(height: 10),
+                const TitelesTextWidget(label: "Settings"),
+                const SizedBox(height: 10),
                 SwitchListTile(
                   secondary: Image.asset(
-                      "${AssetsMenager.imagePath}/profile/night-mode.png",
-                      height: 34),
-                  title: Text(themeProvider.getisDarkTheme
-                      ? "Dark Theme"
-                      : "Light Theme"),
+                    "${AssetsMenager.imagePath}/profile/night-mode.png",
+                    height: 34,
+                  ),
+                  title: Text(
+                    themeProvider.getisDarkTheme ? "Dark Theme" : "Light Theme",
+                  ),
                   value: themeProvider.getisDarkTheme,
                   onChanged: (value) {
                     themeProvider.setDarkTheme(themeValue: value);
                   },
-                )
+                ),
               ],
             ),
           ),
@@ -145,12 +139,9 @@ class ProfileScreen extends StatelessWidget {
               ),
               onPressed: () {},
               icon: const Icon(Icons.login, color: Colors.white),
-              label: const Text(
-                "Login",
-                style: TextStyle(color: Colors.white),
-              ),
+              label: const Text("Login", style: TextStyle(color: Colors.white)),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -173,10 +164,7 @@ class CustomListTile extends StatelessWidget {
         function();
       },
       title: SubtitleTextWidget(label: text),
-      leading: Image.asset(
-        imagePath,
-        height: 34,
-      ),
+      leading: Image.asset(imagePath, height: 34),
       trailing: const Icon(IconlyLight.arrowRight2),
     );
   }

@@ -14,7 +14,7 @@ class RootScreen extends StatefulWidget {
 
 class _RootScreenState extends State<RootScreen> {
   late List<Widget> screens;
-  int currentScreen = 3; //da bi se uvek otvorio homescreen
+  int currentScreen = 0;
   late PageController controller;
 
   @override
@@ -38,37 +38,62 @@ class _RootScreenState extends State<RootScreen> {
         children: screens,
       ),
       bottomNavigationBar: NavigationBar(
-        selectedIndex: currentScreen,
-        height: kBottomNavigationBarHeight,
-        onDestinationSelected: (index) {
-          setState(() {
-            currentScreen = index;
-          });
-          controller.jumpToPage(currentScreen); //klikom na dugme dobijamo indeks
-        },
-        destinations: const [
-          NavigationDestination(
-            selectedIcon: Icon(IconlyBold.home),
-            icon: Icon(IconlyLight.home),
-            label: "Home",
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(IconlyBold.search),
-            icon: Icon(IconlyLight.search),
-            label: "Search",
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(IconlyBold.bag2),
-            icon: Icon(IconlyLight.bag2),
-            label: "Cart",
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(IconlyBold.profile),
-            icon: Icon(IconlyLight.profile),
-            label: "Profile",
-          ),
-        ],
+  selectedIndex: currentScreen,
+  height: kBottomNavigationBarHeight,
+  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+  indicatorColor: Colors.transparent,
+  onDestinationSelected: (index) {
+    setState(() => currentScreen = index);
+    controller.jumpToPage(index);
+  },
+  destinations: [
+    NavigationDestination(
+      selectedIcon: Icon(
+        IconlyBold.home,
+        color: Theme.of(context).colorScheme.onSurface, // ✔ svetla u dark
       ),
+      icon: Icon(
+        IconlyLight.home,
+        color: Theme.of(context).colorScheme.onSurfaceVariant,
+      ),
+      label: "Home",
+    ),
+    NavigationDestination(
+      selectedIcon: Icon(
+        IconlyBold.search,
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
+      icon: Icon(
+        IconlyLight.search,
+        color: Theme.of(context).colorScheme.onSurfaceVariant,
+      ),
+      label: "Search",
+    ),
+    NavigationDestination(
+      selectedIcon: Icon(
+        IconlyBold.bag2,
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
+      icon: Icon(
+        IconlyLight.bag2,
+        color: Theme.of(context).colorScheme.onSurfaceVariant,
+      ),
+      label: "Cart",
+    ),
+    NavigationDestination(
+      selectedIcon: Icon(
+        IconlyBold.profile,
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
+      icon: Icon(
+        IconlyLight.profile,
+        color: Theme.of(context).colorScheme.onSurfaceVariant,
+      ),
+      label: "Profile",
+    ),
+  ],
+),
+
     );
   }
 }
