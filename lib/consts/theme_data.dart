@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skriptarnica/consts/app_colors.dart';
+import 'package:lumine/consts/app_colors.dart';
 
 class Styles {
   static ThemeData themeData({

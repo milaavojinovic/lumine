@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
-import 'package:skriptarnica/consts/app_colors.dart';
-import 'package:skriptarnica/providers/theme_provider.dart';
-import 'package:skriptarnica/services/assets_menager.dart';
-import 'package:skriptarnica/widgets/subtitle_text.dart';
-import 'package:skriptarnica/widgets/title_text.dart';
+import 'package:lumine/consts/app_colors.dart';
+import 'package:lumine/providers/theme_provider.dart';
+import 'package:lumine/services/assets_menager.dart';
+import 'package:lumine/widgets/subtitle_text.dart';
+import 'package:lumine/widgets/title_text.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

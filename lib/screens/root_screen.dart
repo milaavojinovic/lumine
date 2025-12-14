@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:skriptarnica/screens/cart_screen.dart';
-import 'package:skriptarnica/screens/home_screen.dart';
-import 'package:skriptarnica/screens/profile_screen.dart';
-import 'package:skriptarnica/screens/search_screen.dart';
+import 'package:lumine/screens/cart_screen.dart';
+import 'package:lumine/screens/home_screen.dart';
+import 'package:lumine/screens/profile_screen.dart';
+import 'package:lumine/screens/search_screen.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({super.key});

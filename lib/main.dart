@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:skriptarnica/consts/theme_data.dart';
-import 'package:skriptarnica/providers/theme_provider.dart';
-import 'package:skriptarnica/screens/root_screen.dart';
+import 'package:lumine/consts/theme_data.dart';
+import 'package:lumine/providers/theme_provider.dart';
+import 'package:lumine/screens/root_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       child: Consumer<ThemeProvider>(
         builder: (context, themeProvider, child) {
           return MaterialApp(
-            title: 'FTN Skriptarnica',
+            title: 'Lumine',
             theme: Styles.themeData(
               isDarkTheme: themeProvider.getisDarkTheme,
               context: context,
