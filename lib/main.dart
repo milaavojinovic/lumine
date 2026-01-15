@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lumine/screens/inner_screen/product_details.dart';
 import 'package:provider/provider.dart';
 import 'package:lumine/consts/theme_data.dart';
 import 'package:lumine/providers/theme_provider.dart';
@@ -32,6 +33,10 @@ class MyApp extends StatelessWidget {
               context: context,
             ),
             home: const RootScreen(),
+            routes: {
+              ProductDetailsScreen.routName: (context) =>
+                  const ProductDetailsScreen(),
+            }
           );
         },
       ),
